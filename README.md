@@ -97,14 +97,3 @@ Open `dashboard/Track_C_Customer_Behavior_Dashboard.xlsx` in **desktop Microsoft
 - From the original source, `category_translation` has 71 rows, but one earlier SQL Server screenshot reported 72; import needs verification. Other data-import issues and review ties are documented in `docs/source_validation.md`.
 - Observed one-order buyers are not confirmed churned buyers. Comparisons are not causal. The SQL scripts have been reviewed syntactically and export figures recomputed from source CSVs, but **they have not been fully run against the user's local live SQL Server in this environment**.
 
-## Checklist before academic submission
-
-- [ ] Run all SQL scripts in SSMS using local OlistDB; check for errors and reconcile exports with included numbers.
-- [ ] Check/import translation mapping 71 vs 72 and review-comment field lengths.
-- [ ] Test both Excel dropdown filters and all charts in desktop Excel; confirm unfiltered KPI differences are ~0.
-- [ ] If instructor requires native slicers, convert controls with PivotTables/slicers in Excel.
-- [ ] Fill in actual Microsoft SQL Server version, SSMS version, Excel version, and true team member contributions below.
-- [ ] Commit the workbook, report, SQL, docs, aggregate results, and actual dashboard screenshot; **exclude original raw CSVs**.
-
-**Team software versions (complete after checking):** SQL Server: `[version]`; SSMS: `[version]`; Microsoft Excel: `[version]`.  
-**Contribution statement:** See `docs/contributions_template.md` and replace placeholders with factual team roles. AI assistance was used for SQL/report/dashboard package assembly, and results were computed from the user-supplied original public dataset.
