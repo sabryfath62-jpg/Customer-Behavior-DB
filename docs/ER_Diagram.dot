@@ -1,0 +1,20 @@
+digraph ER {
+  graph [rankdir=LR, fontname="Arial",bgcolor="white",nodesep=0.4,ranksep=1.1,labelloc="t",label="OLIST | TRACK C - DATABASE RELATIONSHIPS",fontsize=20];
+  node [shape=record,style="rounded,filled",fillcolor="#EAF3F8",color="#264968",fontname="Arial",fontcolor="#102941",fontsize=11];
+  customers [label="{CUSTOMERS|customer_id (candidate PK)\lcustomer_unique_id\lcustomer_state\l}"];
+  orders [label="{ORDERS|order_id (candidate PK)\lcustomer_id (FK)\lpurchase timestamp\lstatus\l}"];
+  items [label="{ORDER_ITEMS|(order_id,order_item_id) (candidate PK)\lproduct_id (FK)\lseller_id (FK)\lprice / freight\l}"];
+  products [label="{PRODUCTS|product_id (candidate PK)\lproduct_category_name\l}"];
+  sellers [label="{SELLERS|seller_id (candidate PK)\lseller_city / seller_state\l}"];
+  payments [label="{ORDER_PAYMENTS|(order_id,payment_sequential) (candidate PK)\lpayment_value / payment_type\l}"];
+  reviews [label="{ORDER_REVIEWS|review_id (NOT UNIQUE)\lorder_id (FK)\lscore / timestamps\l}"];
+  translation [label="{CATEGORY_TRANSLATION|product_category_name (candidate PK)\lproduct_category_name_english\l}"];
+  edge [fontname="Arial",color="#277E8E",fontcolor="#277E8E",fontsize=10,arrowsize=0.7];
+  customers -> orders [label="1 to many | customer_id"];
+  orders -> items [label="1 to many | order_id"];
+  orders -> payments [label="0 to many | order_id"];
+  orders -> reviews [label="0 to many | order_id"];
+  products -> items [label="1 to many | product_id"];
+  sellers -> items [label="1 to many | seller_id"];
+  translation -> products [label="0 to many | category name"];
+}

@@ -1,0 +1,2 @@
+repeat_customers,first_order_sales,second_order_sales,avg_first_value,avg_second_value,larger_second_count,larger_second_pct,avg_gap_elapsed_days,avg_gap_calendar_days,gap_calendar_days_sum
+2789,343839.29,342621.53,123.28407673001075,122.84744711366082,1272,45.60774471136608,80.22320001361167,80.2194,223732
